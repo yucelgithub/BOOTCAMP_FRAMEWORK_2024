@@ -32,14 +32,13 @@ public class LoginTest extends TestBase {
 			
 			driver.findElement(By.id("loginusername")).sendKeys(username);
 			driver.findElement(By.id("loginpassword")).sendKeys(password);
-			driver.findElement(By.xpath("//html/body/div[3]/div/div/div[3]/button[2]")).click();
-			
+			driver.findElement(By.xpath("//button[@class='btn btn-primary' and @onclick='logIn()']")).click();
 		}	
 		@Test(priority=2)
 		public void LoginwithValidUsernameInvalidPassword() {
 			driver.findElement(By.id("loginusername")).sendKeys("seleniumyucel");
 			driver.findElement(By.id("loginpassword")).sendKeys("selenium1234");
-			driver.findElement(By.xpath("//html/body/div[3]/div/div/div[3]/button[2]")).click();
+			driver.findElement(By.xpath("//button[@class='btn btn-primary' and @onclick='logIn()']")).click();
 			
 			
 		}
@@ -47,7 +46,7 @@ public class LoginTest extends TestBase {
 		public void LoginWitInvalidUsernameValidPassword() {
 			driver.findElement(By.id("loginusername")).sendKeys("aseleniumyucel");
 			driver.findElement(By.id("loginpassword")).sendKeys("selenium123");
-			driver.findElement(By.xpath("//html/body/div[3]/div/div/div[3]/button[2]")).click();
+			driver.findElement(By.xpath("//button[@class='btn btn-primary' and @onclick='logIn()']")).click();
 			
 			
 		}
@@ -55,11 +54,11 @@ public class LoginTest extends TestBase {
 		public void LoginWitInvalidUsernameInValidPassword() {
 			driver.findElement(By.id("loginusername")).sendKeys("cseleniumyucel");
 			driver.findElement(By.id("loginpassword")).sendKeys("selenium1234");
-			driver.findElement(By.xpath("//html/body/div[3]/div/div/div[3]/button[2]")).click();
+			driver.findElement(By.xpath("//button[@class='btn btn-primary' and @onclick='logIn()']")).click();
 		}
 		@Test(priority=5)
 		public void LoginWitNoCredentials() {
-			driver.findElement(By.xpath("//html/body/div[3]/div/div/div[3]/button[2]")).click();
+			driver.findElement(By.xpath("//button[@class='btn btn-primary' and @onclick='logIn()']")).click();
 		}
 			
 		@AfterMethod
